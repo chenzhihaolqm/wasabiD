@@ -1,0 +1,63 @@
+/*create by chenzh
+date:2017-11-14
+desc:下拉框样式
+*/
+@import url("../base.scss");
+.range-wrap {
+  display: inline-block;
+  width: 100%;
+  .wasabi-form-control{
+    display: inline-block;
+    width: 46%;
+  }
+  .seperation{
+    display: inline-block;
+    width: 8%;
+    text-align:center;
+  }
+  .wasabi-button{
+    display:none;
+  }
+  .quick-select-wrap{
+    display:none;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    border: 1px solid #ccc;
+    label,li{
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background: #fff;
+    }
+    label{
+      display: block;
+      padding-left:20px;
+      background:#f2f2f2;
+      .icon-close{
+        float: right;
+        padding: 3px;
+        margin-top:5px;
+        cursor: pointer;
+      }
+    }
+    li{
+      border-top: 1px solid #ccc;
+      cursor:pointer;
+    }
+  }
+}
+.range-wrap.has-quick-select{
+  .wasabi-form-control{
+    width: 36%;
+  }
+  .wasabi-button{
+    display:inline-block;
+    width:14%;
+    margin-left:6%;
+    min-width:initial;
+  }
+}
+
+
+

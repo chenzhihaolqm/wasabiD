@@ -1,0 +1,203 @@
+@import url("../base.scss") ;
+.picker{
+  position: absolute;
+  border: 1px solid #c9cbce;
+  width: 422px;
+  background: #ffffff;
+  z-index: 3;
+  font-size: 0;
+  height: 500px;
+  overflow:auto;
+  top:-1px;
+  white-space: normal;
+}
+
+.picker *{
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 12px;
+}
+.picker ul{
+  list-style: none;
+}
+
+//外层容器
+.picker .all-address-wrap ul.wrap{
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: 9px;
+}
+.picker .all-address-wrap ul li{
+  display: inline-block;
+  position: relative;
+  margin: 4px;
+  cursor: pointer;
+}
+.picker .all-address-wrap p{
+  font-weight: bold;
+  padding: 0 4px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.picker .hot-wrap{
+  width: 100%;
+  background: #ffffff;
+  padding: 9px;
+}
+
+.picker .hot-wrap .line
+{
+  width: 372px;
+  margin: 0 auto;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.picker .hot-wrap .hot-item
+{
+  width: 68px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #f5f5f5;
+}
+
+.picker .hot-item:hover{
+  color: #2ec9c2;
+}
+.picker .hot-chose.expand{
+  color: #2ec9c2;
+}
+
+
+/*
+子节点容器
+*/
+.picker .picker-container.expand{
+  z-index: 3;
+}
+
+.picker .picker-container-wrap{
+  display: none;
+  border: 1px solid #D8D8D8;
+  box-shadow: 0px 3px 40px 0px rgba(0,0,0,0.4);
+  background: #ffffff;
+  position: absolute;
+  top: 39px;
+  width: 328px;
+  padding: 10px;
+}
+
+.picker .picker-container-name{
+  display: inline-block;
+  width: 68px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  background-color: #f5f5f5;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.picker .picker-container-name:hover{
+  color: #2ec9c2;
+}
+
+.picker .picker-container-name.expand{
+  border: 1px solid #D8D8D8;
+  border-bottom-color: #ffffff;
+  color: #2ec9c2;
+  background-color: #ffffff;
+}
+
+
+.picker .pickeritem{
+  width: 68px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #666666;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.picker .pickeritem:hover{
+  color: #2ec9c2;
+}
+.picker .pickeritem.expand{
+  color: #2ec9c2;
+}
+
+.complicated-picker .combobox .picker-clear{
+  right:5px;
+}
+.complicated-picker .combobox .pickericon{
+  display:none;
+}
+
+.match-lis-wrap{
+  display:none;
+}
+.match-lis-wrap.active{
+  display:block;
+}
+
+.match-lis-wrap ul {
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  overflow: hidden;
+  background-color: #fff;
+  max-height: 270px;
+  min-height: 100px;
+  overflow-y: auto;
+  border: 1px solid #999;
+  border-top: 0;
+  box-shadow: 0 3px 5px #999;
+  z-index:3;
+  top:34px ;
+  padding:0px;
+  margin: 0px;;
+  min-width: 120px;
+}
+.match-lis-wrap ul li {
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  padding: 0 10px;
+  cursor: pointer;
+  position: relative;
+}
+.match-lis-wrap ul li:hover {
+  background-color: #dcf9f8;
+}
+
+.match-lis-wrap ul li.active {
+  background-color: #dcf9f8;
+}
+.match-lis-wrap ul li.active:after
+{
+  font-family: 'icomoon' !important;
+  content:"\e95d";
+  position: absolute;
+  top:0px;
+  right: 20px;
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  color:#2ec9c2;
+}
+
+.wasabi-form-group-body .picker-icon-catalog{
+  display:none;
+}
+.wasabi-form-group-body .picker-icon-catalog.active{
+  display:inline-block;
+  right:2px;
+  border: 1px solid #d7dde2;
+}
