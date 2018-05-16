@@ -112,7 +112,8 @@
 
 .wasabi-table .table.table-no-bordered > thead > tr > th,
 .wasabi-table .table.table-no-bordered > tbody > tr > td {
-  border-right: 1px solid transparent;
+  //border-right: 1px solid transparent;
+  border-right: none;
 }
 .wasabi-table .table.table-no-bordered > thead > tr > th:last-child,
 .wasabi-table .table.table-no-bordered > tbody > tr > td:last-child {

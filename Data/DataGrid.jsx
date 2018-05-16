@@ -387,7 +387,7 @@ var DataGrid=React.createClass({
                     }
                     //使用label作为元素name属性，是因为可能有多个列对应同一个字段
                     var savecontrol=null;//保存按钮
-                    if(this.state.editIndex!=null&&index==0) 
+                    if(this.state.editIndex!=null&&index==0)
                     {//0是有效值
                         savecontrol=<LinkButton key="save" style={{color:"#666666",fontSize:12,position:"absolute"}} iconCls={"icon-submit"} name="save" tip="保存" onClick={this.remoteUpdateRow.bind(this,null)}/>
                     }
@@ -401,7 +401,7 @@ var DataGrid=React.createClass({
                         labelContent = ( <span title="点击可进行排序"><span>{header.label}</span>
                         <span className="sort-icon-wrap"><i onClick={upClickFn} className={"sort-icon-up "+ (isUpActive?"active":"")}></i>
                             <i onClick={downClickFn}  className={"sort-icon-down "+ (isDownActive?"active":"")}></i></span></span>)
-                    }  
+                    }
                     let headerClass = "wasabi-table-cell ";
                     if(header.className){
                         headerClass += header.className;
@@ -531,7 +531,7 @@ var DataGrid=React.createClass({
 
 
             //生成数据列
-            this.state.headers.map((header, columnIndex) => {                                                                                                                                                         
+            this.state.headers.map((header, columnIndex) => {
                 if (!header||header.hide||(fixed?!(header.fixed==fixed):false)) {
                     return;
                 }
@@ -584,7 +584,7 @@ var DataGrid=React.createClass({
                         //在第一列显示详情 
                         var iconCls="icon-down";//详情列的图标
                         if(this.state.detailIndex==key)
-                        {   
+                        {
                             iconCls="icon-up";//详情列-展开
                         }
 
@@ -599,7 +599,7 @@ var DataGrid=React.createClass({
                         tds.push(<td onClick={this.onClick.bind(this,rowIndex,rowData)}
                                      onDoubleClick={this.onDoubleClick.bind(this,rowIndex,rowData)}
                                      key={"col"+rowIndex.toString()+"-"+columnIndex.toString()}
-                                     style={header.width?{whiteSpace:"initial"}:{}}  
+                                     style={header.width?{whiteSpace:"initial"}:{}}
                         ><div className="wasabi-table-cell"    style={{width:(header.width?header.width:null),textAlign:(header.align?header.align:"left")}}>{content}</div></td>);
                     }
                 }
@@ -649,8 +649,19 @@ var DataGrid=React.createClass({
                         </tr>);
                         break;
                     case "fixedRight":
+                        let fixedRightHeadersLength = this.state.headers.filter(function(item,i,arr){
+                            return item.fixed==="fixedRight";//过滤出固定于右边的个数
+                        }).length;
+                        let tds = [];
+                        for(let i=0;i<fixedRightHeadersLength;i++){
+                            if(i===0){
+                                tds.push(<td key={"fixedTd"+i}><div className="wasabi-detail" ><div ref="fixedRightWasabiDetailWrap"  className="wasabi-detail-Wrap"></div></div></td>);
+                            }else{
+                                tds.push(<td key={"fixedTd"+i}><div className="wasabi-detail" ><div></div></div></td>); //填充补数
+                            }
+                        }
                         trobj.push(<tr ref="fixedRightDetail" key={this.state.detailIndex+"detail"} style={{borderLeft:"1px solid #e7e7e7"}}>
-                            <td colSpan={colSpan}><div className="wasabi-detail" ><div ref="fixedRightWasabiDetailWrap"  className="wasabi-detail-Wrap"></div></div></td>
+                            {tds}
                         </tr>);
                         break;
                     default:
