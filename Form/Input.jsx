@@ -14,7 +14,8 @@ var DragSort=require("../Action/DragSort.jsx");
 var ComboBox=require("./ComboBox.jsx");
 var Text=require("./Text.jsx");
 var TextRange=require("./TextRange.jsx"); 
-var None=require("./None.jsx");
+var None=require("./None.jsx"); 
+var Title=require("./Title.jsx");
 var Button=require("../Buttons/Button.jsx");
 var LinkButton=require("../Buttons/LinkButton.jsx");
 let setStyle=require("../Mixins/SetStyle.js");
@@ -55,6 +56,7 @@ var Input=React.createClass({
             "muti",//多行文本
             "dragsort",//拖拽排序
             "textrange",//输入文本范围
+            "title",//限定只是作为标题title，不输入
         ]),//输入框的类型
         name:React.PropTypes.string.isRequired,//字段名
         label:React.PropTypes.oneOfType([React.PropTypes.string,React.PropTypes.element,React.PropTypes.node]),//字段文字说明属性
@@ -308,6 +310,10 @@ var Input=React.createClass({
         if (type=="none")
         {//空占位组件
             control=<None ref="input" {...props } ></None>
+        }
+        if (type=="title")
+        {//空占位组件
+            control=<Title ref="input" {...props } ></Title>
         }
        else  if(type=="radio")
         {//单选按钮组

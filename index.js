@@ -37,6 +37,7 @@ exports.Input = require('./Form/Input.jsx');//通用表单组件
 exports.Text = require('./Form/Text.jsx');//文本框
 exports.TextBlock = require('./Form/TextBlock.jsx');//文本块输入框
 exports.None = require('./Form/None.jsx');//空白占位表单组件
+exports.InputNumber = require('./Form/InputNumber.jsx');//加减器组件
 /*****************类按钮表单组件******************/
 
 exports.Radio = require('./Form/Radio.jsx');//单选框集合组件
